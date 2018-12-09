@@ -1,0 +1,40 @@
+<head>
+    <!--<link rel="stylesheet" type="text/css" href="Style/style.css">-->
+    <!--<script type="text/javascript" src="Script/index.js"></script>-->
+    <?php
+        if($publicKey === NULL) {
+            $crypt = generateKeys();
+            $publicKey = $crypt[0];
+            $privateKey = $crypt[1];
+            unset($crypt);
+        }
+    ?>
+</head>
+
+<div id="kryptArea">
+    <form action="index.php" method="post" enctype="multipart/form-data"><!--class="my-form">-->
+        <br/>
+        <p>Adicione os arquivos desejados (MAX: 300MB) O CHORO EH LIVRE!!!</p>
+		<p>Powered by Matheus Santana (matheus.rmn@gmail.com)</p>
+        <br/>
+        <input name="files[]" type="file" multiple required/> <!-- onchange="showFirstName()"> id="files" -->
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <p>Baixar Chaves
+            <input type="radio" name="downloadKeys" value=1 checked /> Sim
+            <input type="radio" name="downloadKeys" value=0 />         Nao
+        </p>
+        <br/>
+        <br/>
+        <p> Public Key </p>
+        <textarea id="publicKey" name="publicKey" type="text" rows=7 cols=70><?php echo($publicKey); ?></textarea>&nbsp;
+        <input type="submit" name="encript" value=" Enkrypt " />
+        <br/>
+        <br/>
+        <p> Private Key </p>
+        <textarea id="privateKey" name="privateKey" type="text" rows=7 cols=70><?php echo($privateKey); ?></textarea>&nbsp;
+        <input type="submit" name="decript" value=" Dekrypt "/>
+    </form>
+</div>
