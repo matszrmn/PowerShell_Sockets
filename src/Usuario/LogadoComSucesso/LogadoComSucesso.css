@@ -1,0 +1,49 @@
+.corpo{
+    background: url('../../Imagens/biblio.jpg');
+    background-position: 52% 0%;
+    overflow: hidden;
+    background-color: #000000;
+}
+.fraseBemVindo {
+    position: absolute;
+    right: 45.2%;
+    top: 12%;
+    color:#FFFFFF; 
+    text-shadow:#000000 1px -1px, #000000 -1px 1px, #000000 1px 1px, #000000 -1px -1px;
+    font-size: 140%;
+}
+.botaoConfiguracoes {
+    box-shadow: 1px 1px 1px #000000;
+    border-color:#404040;
+    position: absolute;
+    right: 2%;
+    top: 4%;
+}
+.botaoLivrosPublicos {
+    box-shadow: 1px 1px 1px #000000;
+    border-color:#383838;
+    position: absolute;
+    right: 46.5%;
+    top: 30%;
+}
+.botaoMeusLivros {
+    box-shadow: 1px 1px 1px #000000;
+    border-color:#383838;
+    position: absolute;
+    right: 46.5%;
+    top: 40%;
+}
+.botaoMinhaReputacao {
+    box-shadow: 1px 1px 1px #000000;
+    border-color:#383838;
+    position: absolute;
+    right: 46.5%;
+    top: 50%;
+}
+.botaoSair {
+    box-shadow: 1px 1px 1px #000000;
+    border-color:#383838;
+    position: absolute;
+    right: 2%;
+    top: 10%;
+}

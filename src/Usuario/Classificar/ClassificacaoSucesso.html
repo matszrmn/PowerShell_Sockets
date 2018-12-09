@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+        .fraseSucesso {
+            font-family: Serif;
+            font-size: 160%;
+            position:absolute;
+            right: 34.7%;
+            top: 26%;
+        }
+        .botaoVoltar {
+            background:url(../../Imagens/voltar.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 46%;
+            top: 40%;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<script>
+    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
+    var compare = "<?php echo $_SESSION['usuario']; ?>";
+        
+    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
+</script>
+
+<body style="background-color: black; color: white;">
+    <div class="fraseSucesso">Classificacao efetuada com sucesso!</div>
+    
+    <form action="../../Livros/RecebidosDeVolta/ListarPossiveis.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>" >
+        <input type="submit" value="   Voltar" class="botaoVoltar">
+    </form>
+</body>

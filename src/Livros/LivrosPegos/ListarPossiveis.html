@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .corpo {
+            background: url('../../Imagens/LivroLista.jpg');
+            background-position: 52% 0%;
+            overflow: hidden;
+            background-color: #000000;
+            color:#FFFFFF;
+            text-shadow:#000000 1px -1px, #000000 -1px 1px, #000000 1px 1px, #000000 -1px -1px;
+        }
+        .retangulo1 {
+            padding: 330px;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-style: solid;
+            border-color:#FFFFFF;
+            position: absolute;
+            right:25.5%;
+            top:28%;
+        }
+        .retangulo2 {
+            padding: 330px;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-style: solid;
+            border-color:#FFFFFF;
+            position: absolute;
+            right:25.5%;
+            top:34.3%;
+        }
+        .retangulo3 {
+            padding: 330px;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-style: solid;
+            border-color:#FFFFFF;
+            position: absolute;
+            right:25.5%;
+            top:40.6%;
+        }
+        .retangulo4 {
+            padding: 330px;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-style: solid;
+            border-color:#FFFFFF;
+            position: absolute;
+            right:25.5%;
+            top:46.9%;
+        }
+        .retangulo5 {
+            padding: 330px;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-style: solid;
+            border-color:#FFFFFF;
+            position: absolute;
+            right:25.5%;
+            top:53.2%;
+        }
+        .retangulo6 {
+            padding: 330px;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-style: solid;
+            border-color:#FFFFFF;
+            position: absolute;
+            right:25.5%;
+            top:59.5%;
+        }
+        .retangulo7 {
+            padding: 330px;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-style: solid;
+            border-color:#FFFFFF;
+            position: absolute;
+            right:25.5%;
+            top:65.8%;
+        }
+        .retangulo8 {
+            padding: 330px;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-style: solid;
+            border-color:#FFFFFF;
+            position: absolute;
+            right:25.5%;
+            top:72.1%;
+        }
+        .retangulo9 {
+            padding: 330px;
+            border-bottom-width: 0px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-style: solid;
+            border-color:#FFFFFF;
+            position: absolute;
+            right:25.5%;
+            top:78.4%;
+        }
+        .frasePaginas {
+            color:#000000;
+            text-shadow:none;
+            position: absolute;
+            right:50%;
+            top:93%;
+        }
+        .caixaTexto {
+            background-color:#FFFFFF;
+            border-width: .2em;
+            border-style: solid;
+            border-color: #000000;
+        }
+        .borda {
+            font-weight:bold;
+            color:black;
+            text-shadow:none;
+        }
+        .tabela1 {
+            position: absolute;
+            right:25.5%;
+            top:25%;
+        }
+        .tabela1dot5 {
+            position: absolute;
+            right:25.5%;
+            top:27.5%;
+        }
+        .tabela2 {
+            position: absolute;
+            right:25.5%;
+            top:31.3%;
+        }
+        .tabela2dot5 {
+            position: absolute;
+            right:25.5%;
+            top:33.8%;
+        }
+        .tabela3 {
+            position: absolute;
+            right:25.5%;
+            top:37.6%;
+        }
+        .tabela3dot5 {
+            position: absolute;
+            right:25.5%;
+            top:40.1%;
+        }
+        .tabela4 {
+            position: absolute;
+            right:25.5%;
+            top:43.9%;
+        }
+        .tabela4dot5 {
+            position: absolute;
+            right:25.5%;
+            top:46.4%;
+        }
+        .tabela5 {
+            position: absolute;
+            right:25.5%;
+            top:50.2%;
+        }
+        .tabela5dot5 {
+            position: absolute;
+            right:25.5%;
+            top:52.7%;
+        }
+        .tabela6 {
+            position: absolute;
+            right:25.5%;
+            top:56.5%;
+        }
+        .tabela6dot5 {
+            position: absolute;
+            right:25.5%;
+            top:59%;
+        }
+        .tabela7 {
+            position: absolute;
+            right:25.5%;
+            top:62.8%;
+        }
+        .tabela7dot5 {
+            position: absolute;
+            right:25.5%;
+            top:65.3%;
+        }
+        .tabela8 {
+            position: absolute;
+            right:25.5%;
+            top:69.1%;
+        }
+        .tabela8dot5 {
+            position: absolute;
+            right:25.5%;
+            top:71.6%;
+        }
+        .tabela9 {
+            position: absolute;
+            right:25.5%;
+            top:75.4%;
+        }
+        .tabela9dot5 {
+            position: absolute;
+            right:25.5%;
+            top:77.9%;
+        }
+        .tabela10 {
+            position: absolute;
+            right:25.5%;
+            top:81.7%;
+        }
+        .tabela10dot5 {
+            position: absolute;
+            right:25.5%;
+            top:84.2%;
+        }
+        .botao1 {
+            position: absolute;
+            right:48%;
+            top:93%;
+        }
+        .botao2 {
+            position: absolute;
+            right:45%;
+            top:93%;
+        }
+        .botao3 {
+            position: absolute;
+            right:42%;
+            top:93%;
+        }
+        .botao4 {
+            position: absolute;
+            right:39%;
+            top:93%;
+        }
+        .botao5 {
+            position: absolute;
+            right:36%;
+            top:93%;
+        }
+        .devolverLivro {
+            background:url(../../Imagens/check.png);
+            background-size:15%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 5% 40%;
+            border-color:#696969;
+            position:absolute;
+            top:55%;
+            left:80%;
+            font-size:110%;
+            cursor:pointer;
+        }
+        .botaoBuscar {
+            border-color:#696969;
+            font-size:120%;
+            cursor:pointer;
+        }
+        .botaoAtualizar {
+            background:url(../../Imagens/atualizar.jpg);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position:absolute;
+            top:4%;
+            left:45.5%;
+            margin:0px;
+            cursor:pointer;
+        }
+        .botaoVoltar {
+            background:url(../../Imagens/voltar.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 92.5%;
+            top: 5%;
+            cursor:pointer;
+        }
+        .blocoBuscar1 {
+            color:#FFFFFF;
+            position: absolute;
+            right:17.5%;
+            top:13%;
+        }
+        .blocoBuscar2 {
+            color:#FFFFFF;
+            position: absolute;
+            right:17.5%;
+            top:17%;
+        }
+        
+        .mensagemErro {
+            font-weight:bold;
+            position: absolute;
+            left: 80%;
+            top: 42%;
+            color:#FF0000;
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+        }
+        .mensagemSucesso {
+            position: absolute;
+            left: 80%;
+            top: 42%;
+            color:#00FF00; 
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+        }
+    </style>
+</head>
+
+<script>
+    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
+    var compare = "<?php echo $_SESSION['usuario']; ?>";
+        
+    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
+</script>
+
+<body class="corpo">
+    <div class="mensagemErro"><?php echo $mensagemErro; ?></div>
+    <div class="mensagemSucesso"><?php echo $mensagemSucesso; ?></div>
+    <div class="frasePaginas">Paginas </div>
+    
+    <form method="post" action="Buscar.php">
+        <div class = "blocoBuscar1">
+        
+            Titulo: <input type="text" name="buscaTitulo" maxlength="30" class="caixaTexto">
+            Autor: <input type="text" name="buscaAutor" maxlength="20" class="caixaTexto">
+            Editora: <input type="text" name="buscaEditora" maxlength="15" class="caixaTexto">
+            Genero: <input type="text" name="buscaGenero" maxlength="20" class="caixaTexto">
+        </div>
+        <div class="blocoBuscar2">
+            Proprietario: <input type="text" name="buscaProprietario" maxlength="20" class="caixaTexto">
+            Data limite de entrega : <input type="date" name="buscaDataEntrega" class="caixaTexto">
+            Hora limite de entrega: <input type="text" name="buscaHoraLimite" maxlength="2" class="caixaTexto">
+            
+            <input type="hidden" name="usuario" value=<?php echo $usuario; ?>>
+            <input type="submit" value="Buscar" class="botaoBuscar">
+        </div>
+    </form>
+    
+    <form method="post" action="Transacao.php">
+        <input type="hidden" name="usuario" value=<?php echo $usuario; ?>>
+        <input type="hidden" name="transacao" value="ListarPossiveis.php">
+        <input type="submit" value="    Atualizar" class="botaoAtualizar">
+    </form>
+    
+    <form method="post" action="../../Livros/LivrosPublicos/Transacao.php">
+        <input type="hidden" name="usuario" value=<?php echo $usuario; ?>>
+        <input type="hidden" name="transacao" value="LivrosPublicos.html">
+        <input type="submit" value="   Voltar" class="botaoVoltar">
+    </form>
+    
+    <form method="post" action="DevolverLivro.php">
+    <?php 
+        $i=1;
+        if($listaLivros!=null) {
+            while ($row = mysqli_fetch_assoc($listaLivros)): ?>
+        
+        <p class='<?php echo ("retangulo{$i}"); ?>'>
+        <div class='<?php echo ("tabela{$i}"); ?>'>
+            <?php 
+                echo ("<font class='borda'>Titulo: </font>".$row['Titulo']." &nbsp; 
+                       <font class='borda'>Autor: </font>".$row['Autor']." &nbsp; 
+                       <font class='borda'>Editora: </font>".$row['Editora']." &nbsp; 
+                       <font class='borda'>Edicao: </font>".$row['Edicao']." &nbsp; 
+                       <font class='borda'>Genero: </font>".$row['Genero']." &nbsp;"); 
+                ?>
+        </div>
+        <div class='<?php echo ("tabela{$i}dot5"); ?>'>
+            <?php
+                $date = date_create_from_format('Y-m-d', $row['Max_Data_Entrega']);
+                $dataBrasil = date_format($date, 'd/m/Y');
+                $horaFormal = $row['Hora_Limite'].":00";
+                
+        
+                echo ("<font class='borda'>Proprietario: </font>".$row['Proprietario']." &nbsp; 
+                       <font class='borda'>Data limite de entrega: </font>".$dataBrasil." &nbsp; 
+                       <font class='borda'>Hora limite de entrega: </font>".$horaFormal); 
+            ?>
+            <input type="checkbox" name="IDLivro[]" value=<?php echo $row['Livro_ID'];?>>
+        </div>
+        </p>
+        <?php
+            $i=$i+1;
+            endwhile; 
+        }?>
+        <input type="hidden" name="usuario" value=<?php echo $usuario; ?>>
+        <input type="hidden" name="paginaAtual" value=<?php echo $paginaAtual; ?>>
+        <input type="hidden" name="maxPaginas" value=<?php echo $maxPaginas; ?>>
+        <input type="hidden" name="maxTamanho" value=<?php echo $maxTamanho; ?>>
+        <input type="submit" value="   Devolver" class="devolverLivro">
+    </form>
+    
+    <?php 
+        $i=1;
+        if($listaPaginas!=null) {
+        foreach ($listaPaginas as $no) { ?>
+            <div class='<?php echo ("botao{$i}"); ?>'>
+                <?php if($no!=$paginaAtual): ?>
+                    <form method="post" action="ProximaPagina.php">
+                        <input type="hidden" name="usuario" value=<?php echo $usuario; ?>>
+                        
+                        <input type="hidden" name="paginaAtual" value=<?php echo $no; ?>>
+                        <input type="hidden" name="maxPaginas" value=<?php echo $maxPaginas; ?>>
+                        <input type="hidden" name="maxTamanho" value=<?php echo $maxTamanho; ?>>
+                        
+                        <input type="submit" value="<?php echo $no ?>"> 
+                    </form>
+                <?php else : 
+                    echo $no;?>
+                <?php endif; ?>
+            </div>
+    <?php 
+        $i=$i+1;
+        } }?>
+</body>

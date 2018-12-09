@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        .corpo{
+            background: url('../../Imagens/books.jpg');
+            background-position: 40% 0%;
+            background-size: 125%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        .fraseInicial {
+            font-family: Papyrus, fantasy;
+            position: absolute;
+            right: 45%;
+            top: 8.7%;
+            color:#FFFFFF; 
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size: 150%;
+        }
+        .label {
+            color:#FFFFFF; 
+            text-shadow:#000000 1px -1px, #000000 -1px 1px, #000000 1px 1px, #000000 -1px -1px;
+            font-size: 120%;
+        }
+        .caixaTexto {
+            background-color:#FFFFFF;
+            border-width: .2em;
+            border-style: solid;
+            border-color: #000000;
+        }
+        .blocoNome {
+            position: absolute;
+            right:43.8%;
+            top:26%;
+        }
+        .blocoEmail {
+            position: absolute;
+            right:43.8%;
+            top:32%;
+        }
+        .blocoTelefone {
+            position: absolute;
+            right:43.8%;
+            top:38%;
+        }
+        .blocoSenha {
+            position: absolute;
+            right:43.8%;
+            top:44%;
+        }
+        .blocoRepeticaoSenha {
+            position: absolute;
+            right:43.8%;
+            top:50%;
+        }
+        .blocoSenhaAntiga {
+            position: absolute;
+            right:43.8%;
+            top:56%;
+        }
+        
+        .botaoVoltar {
+            background:url(../../Imagens/voltar.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 92.5%;
+            top: 5%;
+            cursor:pointer;
+        }
+        .botaoExcluir {
+            background:url(../../Imagens/Erase.png);
+            background-size:13%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 15%;
+            top: 44%;
+            cursor:pointer;
+        }
+        .botaoModificar {
+            background-color:#4169E1;
+            color:#FFFFFF;
+            border-color:#4169E1;
+            position: absolute;
+            font-size:105%;
+            right: 45%;
+            top: 65%;
+            cursor:pointer
+        }
+        
+        .mensagemErro {
+            position: absolute;
+            right: 43.8%;
+            top: 23.5%;
+            color:red; 
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+        }
+        .mensagemSucesso {
+            position: absolute;
+            right: 43.8%;
+            top: 23.5%;
+            color:#00FF00; 
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+        }
+    </style>
+</head>
+
+<script>
+    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
+    var compare = "<?php echo $_SESSION['usuario']; ?>";
+        
+    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
+</script>
+
+<body class="corpo">
+    <div class="fraseInicial">Configurações</div>
+    <div class="mensagemErro"><?php echo $mensagemErro; ?></div>
+    <div class="mensagemSucesso"><?php echo $mensagemSucesso; ?></div>
+    
+    <form method="post" action="../../Usuario/LogadoComSucesso/Transacao.php">
+        <input type="hidden" name="transacao" value="LogadoComSucesso.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
+        <input type="submit" value="   Voltar" class="botaoVoltar">
+    </form>
+    <form method="post" action="Modificar.php">
+        <div class = "blocoNome">
+            <p class="label">Novo Nome    
+                <input type="text" name="nome" maxlength="30" class="caixaTexto">
+            </p>
+        </div>
+        <div class = "blocoEmail">
+            <p class="label">Novo Email
+                <input type="text" name="email" maxlength="30" class="caixaTexto">
+            </p>
+        </div>
+        <div class = "blocoTelefone">
+            <p class="label">Novo Telefone
+                <input type="number" name="telefone" maxlength="15" class="caixaTexto">
+            </p>
+        </div>
+        <div class = "blocoSenha">
+            <p class="label">Nova Senha
+                <input type="password" name="senha" maxlength="30" class="caixaTexto" >
+            </p>
+        </div>
+        <div class = "blocoRepeticaoSenha">
+            <p class="label">Repita a Nova Senha
+                <input type="password" name="repeticaoSenha" maxlength="30" class="caixaTexto" >
+            </p>
+        </div>
+        <div class = "blocoSenhaAntiga">
+            <p class="label">Senha Antiga
+                <input type="password" name="senhaAntiga" maxlength="30" class="caixaTexto" required>
+            </p>
+        </div>
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" >
+        <input type="submit" value="Modificar Conta" class="botaoModificar">
+    </form>
+    <form method="post" action="Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" >
+        <input type="hidden" name="transacao" value="Deletar.html">
+        <input type="submit" value="    Excluir Conta" class="botaoExcluir">
+    </form>
+</body>

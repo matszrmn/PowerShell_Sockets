@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+        .corpo{
+            background: url('../../Imagens/LivroLista.jpg');
+            background-position: 52% 0%;
+            overflow: hidden;
+            background-color: #000000;
+            color:#FFFFFF;
+            text-shadow:#000000 1px -1px, #000000 -1px 1px, #000000 1px 1px, #000000 -1px -1px;
+        }
+        .fraseAtribuir {
+            font-family: Papyrus, fantasy;
+            position: absolute;
+            right: 45%;
+            top: 25%;
+            color:#FFFFFF; 
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size: 150%;
+        }
+        
+        .botaoVoltar {
+            background:url(../../Imagens/voltar.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 92.5%;
+            top: 5%;
+            cursor:pointer;
+        }
+        .botaoAtribuir {
+            border-color:#696969;
+            font-size:120%;
+            cursor:pointer;
+        }
+        .blocoAtribuir {
+            font-size:130%;
+            position: absolute;
+            right: 37%;
+            top: 50%;
+        }
+        
+        
+        .caixaTexto {
+            background-color:#FFFFFF;
+            border-width: .2em;
+            border-style: solid;
+            border-color: #000000;
+        }
+        .mensagemErro {
+            font-weight:bold;
+            color:#FF0000;
+            position:absolute;
+            right:45%;
+            top:45.5%;
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+        }
+    </style>
+</head>
+
+<script>
+    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
+    var compare = "<?php echo $_SESSION['usuario']; ?>";
+        
+    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
+</script>
+
+<body class="corpo">
+    <div class="fraseAtribuir">Avaliar Usuario</div>
+    <div class="mensagemErro"><?php echo $mensagemErro; ?></div>
+    
+    <form action="AtribuirNota.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
+        <input type="hidden" name="IDDevolvedor" value="<?php echo $IDDevolvedor; ?>">
+        <input type="hidden" name="Livro_ID" value="<?php echo $Livro_ID;?>">
+        
+        <div class="blocoAtribuir">
+            Nota de avaliacao (de 0 a 10):
+            <input type="number" name="Nota" maxlength="2" class="caixaTexto">
+            <input type="submit" value="Atribuir" class="botaoAtribuir">
+        </div>
+    </form>
+    <form action="../../Livros/RecebidosDeVolta/ListarPossiveis.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
+        <input type="submit" value="   Voltar" class="botaoVoltar">
+    </form>
+</body>

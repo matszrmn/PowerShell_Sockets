@@ -1,0 +1,46 @@
+.corpo{
+    background: url('../Imagens/biblio.jpg');
+    background-position: 52% 0%;
+    overflow: hidden;
+    background-color: #000000;
+}
+.label {
+    color:#FFFFFF; 
+    text-shadow:#000000 1px -1px, #000000 -1px 1px, #000000 1px 1px, #000000 -1px -1px;
+    font-size: 120%;
+}
+.caixaTexto {
+    background-color:#FFFFFF;
+    border-width: .2em;
+    border-style: solid;
+    border-color: #000000;
+}
+.blocoUsuario {
+    position: absolute;
+    right:42%;
+    top:37.3%;
+}
+.blocoSenha {
+    position: absolute;
+    right:42%;
+    top:44%;
+}
+.fraseCriarConta {
+    position: absolute;
+    right: 3%;
+    top: 0%;
+    color:#FFFFFF; 
+    text-shadow:#000000 1px -1px, #000000 -1px 1px, #000000 1px 1px, #000000 -1px -1px;
+    font-size: 120%;
+}
+.botaoLogar {
+    position: absolute;
+    right: 47%;
+    top: 52.5%;
+}
+.mensagemErro {
+    position: absolute;
+    right: 42%;
+    top: 35%;
+    color:#FF0000;
+}

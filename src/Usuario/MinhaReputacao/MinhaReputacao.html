@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+        .blocoID, .blocoNota, .blocoAvaliadores {
+            color:black;
+            font-weight:bold;
+            text-shadow: 1px 1px 0 #989898,
+            -1px 1px 0 #989898,
+            1px -1px 0 #989898,
+            -1px -1px 0 #989898,
+            0px 1px 0 #989898,
+            0px -1px 0 #989898,
+            -1px 0px 0 #989898,
+            1px 0px 0 #989898,
+            2px 2px 0 #989898,
+            -2px 2px 0 #989898,
+            2px -2px 0 #989898,
+            -2px -2px 0 #989898,
+            0px 2px 0 #989898,
+            0px -2px 0 #989898,
+            -2px 0px 0 #989898,
+            2px 0px 0 #989898,
+            1px 2px 0 #989898,
+            -1px 2px 0 #989898,
+            1px -2px 0 #989898,
+            -1px -2px 0 #989898,
+            2px 1px 0 #989898,
+            -2px 1px 0 #989898,
+            2px -1px 0 #989898,
+            -2px -1px 0 #989898;
+        }
+        .blocoID {
+            position:absolute;
+            left: 44.5%;
+            top: 26%;
+        }
+        .blocoNota {
+            position:absolute;
+            left: 44.5%;
+            top: 36%;
+        }
+        .blocoAvaliadores {
+            position:absolute;
+            left: 44.5%;
+            top: 46%;
+        }
+        
+        .label {
+            color:#FFFFFF;
+            text-shadow:none;
+            font-family: Serif;
+            font-size: 160%;
+        }
+        .botaoVoltar {
+            background:url(../../Imagens/voltar.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 46%;
+            top: 59%;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<script>
+    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
+    var compare = "<?php echo $_SESSION['usuario']; ?>";
+        
+    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
+</script>
+
+<body style="background-color: black; color: white;">
+    <?php while($row = mysqli_fetch_assoc($result)) { ?>
+        <div class="blocoID">
+            ID: <font class="label">&nbsp;<?php echo "  ".$row['ID']; ?></font>
+        </div>
+        <div class="blocoNota">Nota de Avaliacao:
+            <font class="label">&nbsp;<?php echo "  ".$row['Nota_Qualificacao']; ?></font>
+        </div>
+        <div class="blocoAvaliadores">Total de Avaliadores:
+            <font class="label">&nbsp;<?php echo "  ".$row['Total_Qualificantes']; ?></font>
+        </div>
+    <?php } ?>
+    
+    <form action="../LogadoComSucesso/LogadoComSucesso.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>" >
+        <input type="submit" value="   Voltar" class="botaoVoltar">
+    </form>
+</body>

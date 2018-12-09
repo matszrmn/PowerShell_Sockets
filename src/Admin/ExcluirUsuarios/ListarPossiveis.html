@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .corpo {
+            color:#FFFFFF;
+            background: url('../../Imagens/adminWallpaper.png');
+            background-size:100%;
+            background-position: 52% 0%;
+            background-repeat:no-repeat;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        
+        .frasePaginas {
+            color:#FFFFFF;
+            text-shadow:none;
+            position: absolute;
+            right:50%;
+            top:93%;
+        }
+        .caixaTexto {
+            background-color:#FFFFFF;
+            border-width: .2em;
+            border-style: solid;
+            border-color: #000000;
+            width:11%;
+        }
+        .borda {
+            font-weight:bold;
+            color:black;
+            text-shadow: 1px 1px 0 #FF0000,
+            -1px 1px 0 #FF0000,
+            1px -1px 0 #FF0000,
+            -1px -1px 0 #FF0000,
+            0px 1px 0 #FF0000,
+            0px -1px 0 #FF0000,
+            -1px 0px 0 #FF0000,
+            1px 0px 0 #FF0000,
+            2px 2px 0 #FF0000,
+            -2px 2px 0 #FF0000,
+            2px -2px 0 #FF0000,
+            -2px -2px 0 #FF0000,
+            0px 2px 0 #FF0000,
+            0px -2px 0 #FF0000,
+            -2px 0px 0 #FF0000,
+            2px 0px 0 #FF0000,
+            1px 2px 0 #FF0000,
+            -1px 2px 0 #FF0000,
+            1px -2px 0 #FF0000,
+            -1px -2px 0 #FF0000,
+            2px 1px 0 #FF0000,
+            -2px 1px 0 #FF0000,
+            2px -1px 0 #FF0000,
+            -2px -1px 0 #FF0000;
+            /*text-shadow:none;*/
+        }
+        .tabela1 {
+            position: absolute;
+            right:25.5%;
+            top:25%;
+        }
+        .tabela2 {
+            position: absolute;
+            right:25.5%;
+            top:31.3%;
+        }
+        .tabela3 {
+            position: absolute;
+            right:25.5%;
+            top:37.6%;
+        }
+        .tabela4 {
+            position: absolute;
+            right:25.5%;
+            top:43.9%;
+        }
+        .tabela5 {
+            position: absolute;
+            right:25.5%;
+            top:50.2%;
+        }
+        .tabela6 {
+            position: absolute;
+            right:25.5%;
+            top:56.5%;
+        }
+        .tabela7 {
+            position: absolute;
+            right:25.5%;
+            top:62.8%;
+        }
+        .tabela8 {
+            position: absolute;
+            right:25.5%;
+            top:69.1%;
+        }
+        .tabela9 {
+            position: absolute;
+            right:25.5%;
+            top:75.4%;
+        }
+        .tabela10 {
+            position: absolute;
+            right:25.5%;
+            top:81.7%;
+        }
+        .botao1 {
+            position: absolute;
+            right:48%;
+            top:93%;
+        }
+        .botao2 {
+            position: absolute;
+            right:45%;
+            top:93%;
+        }
+        .botao3 {
+            position: absolute;
+            right:42%;
+            top:93%;
+        }
+        .botao4 {
+            position: absolute;
+            right:39%;
+            top:93%;
+        }
+        .botao5 {
+            position: absolute;
+            right:36%;
+            top:93%;
+        }
+        .excluirUsuario {
+            background:url(../../Imagens/lixeira.jpg);
+            background-size:30%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: -1% 100%;
+            border-color:#696969;
+            position:absolute;
+            top:55%;
+            left:80%;
+            font-size:110%;
+            cursor:pointer;
+        }
+        .botaoBuscar {
+            color:#000000;
+            border-color:#696969;
+            font-size:120%;
+            cursor:pointer;
+        }
+        .botaoAtualizar {
+            background:url(../../Imagens/atualizar.jpg);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position:absolute;
+            top:4%;
+            left:45.5%;
+            margin:0px;
+            cursor:pointer;
+        }
+        .botaoVoltar {
+            background:url(../../Imagens/voltar.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 92.5%;
+            top: 5%;
+            cursor:pointer;
+        }
+        .blocoBuscar {
+            color:#FFFFFF;
+            position: absolute;
+            left:5%;
+            top:13%;
+        }
+        
+        .mensagemErro {
+            font-weight:bold;
+            position: absolute;
+            left: 80%;
+            top: 42%;
+            color:#FF0000;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+        }
+        .mensagemSucesso {
+            position: absolute;
+            left: 80%;
+            top: 42%;
+            color:#00FF00; 
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+        }
+    </style>
+</head>
+
+<body class="corpo">
+    <div class="mensagemErro"><?php echo $mensagemErro; ?></div>
+    <div class="mensagemSucesso"><?php echo $mensagemSucesso; ?></div>
+    <div class="frasePaginas">Paginas </div>
+    
+    <form method="post" action="../../Admin/LogadoComSucesso.html">
+        <input type="submit" value="   Voltar" class="botaoVoltar">
+    </form>
+    
+    
+    <form method="post" action="Buscar.php">
+        <div class = "blocoBuscar">
+        
+            ID: <input type="text" name="buscaID" maxlength="20" class="caixaTexto">
+            Nome: <input type="text" name="buscaNome" maxlength="30" class="caixaTexto">
+            Email: <input type="text" name="buscaEmail" maxlength="30" class="caixaTexto">
+            Nota de Qualificacao: <input type="text" name="buscaNota" maxlength="10" class="caixaTexto">
+            Total de Avaliadores: <input type="number" name="buscaTotalQualif" maxlength="10" class="caixaTexto">
+            
+            <input type="submit" value="Buscar" class="botaoBuscar">
+        </div>
+    </form>
+    
+    <form method="post" action="ListarPossiveis.php">
+        <input type="submit" value="    Atualizar" class="botaoAtualizar">
+    </form>
+    
+    
+    <form method="post" action="ExcluirUsuario.php">
+    <?php 
+        $i=1;
+        if($listaUsuarios!=null) {
+            while ($row = mysqli_fetch_assoc($listaUsuarios)): ?>
+        
+        <div class='<?php echo ("tabela{$i}"); ?>'>
+            <?php 
+                echo ("<font class='borda'>ID: </font>".$row['ID']." &nbsp; 
+                       <font class='borda'>Nome: </font>".$row['Nome']." &nbsp; 
+                       <font class='borda'>Email: </font>".$row['Email']." &nbsp; 
+                       <font class='borda'>Nota de Qualificacao: </font>".$row['Nota_Qualificacao']." &nbsp; 
+                       <font class='borda'>Total de Avaliadores: </font>".$row['Total_Qualificantes']." &nbsp;"); 
+                ?>
+                <input type="checkbox" name="IDUsuario[]" value=<?php echo $row['ID'];?>>
+        </div>
+        <?php
+            $i=$i+1;
+            endwhile; 
+        }?>
+        <input type="hidden" name="paginaAtual" value=<?php echo $paginaAtual; ?>>
+        <input type="hidden" name="maxPaginas" value=<?php echo $maxPaginas; ?>>
+        <input type="hidden" name="maxTamanho" value=<?php echo $maxTamanho; ?>>
+        <input type="submit" value="    Excluir" class="excluirUsuario">
+    </form>
+    
+    <?php 
+        $i=1;
+        if($listaPaginas!=null) {
+            foreach ($listaPaginas as $no) { ?>
+            <div class='<?php echo ("botao{$i}"); ?>'>
+                <?php if($no!=$paginaAtual): ?>
+                    <form method="post" action="ProximaPagina.php">
+                        <input type="hidden" name="paginaAtual" value=<?php echo $no; ?>>
+                        <input type="hidden" name="maxPaginas" value=<?php echo $maxPaginas; ?>>
+                        <input type="hidden" name="maxTamanho" value=<?php echo $maxTamanho; ?>>
+                        
+                        <input type="submit" value="<?php echo $no ?>"> 
+                    </form>
+                <?php else : 
+                    echo $no;?>
+                <?php endif; ?>
+            </div>
+    <?php 
+        $i=$i+1;
+        } }?>
+</body>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+        .corpo {
+            background: url('../../Imagens/LivroLista.jpg');
+            background-position: 52% 0%;
+            overflow: hidden;
+            background-color: #000000;
+            color:#FFFFFF;
+            text-shadow:#000000 1px -1px, #000000 -1px 1px, #000000 1px 1px, #000000 -1px -1px;
+        }
+        .borda {
+            font-weight:bold;
+            color:black;
+            text-shadow:none;
+        }
+        .fraseExcluir {
+            font-family: Papyrus, fantasy;
+            position: absolute;
+            right: 45%;
+            top: 25%;
+            color:#FFFFFF; 
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size: 150%;
+        }
+        
+        .botaoExcluir {
+            background:url(../../Imagens/lixeira.jpg);
+            background-size:30%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: -1% 100%;
+            border-color:#696969;
+            position:absolute;
+            top:55%;
+            right:8%;
+            font-size:110%;
+            cursor:pointer;
+        }
+        .botaoAtualizar {
+            background:url(../../Imagens/atualizar.jpg);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position:absolute;
+            top:4%;
+            left:45.5%;
+            margin:0px;
+            cursor:pointer;
+        }
+        .botaoVoltar {
+            background:url(../../Imagens/voltar.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 92.5%;
+            top: 5%;
+            cursor:pointer;
+        }
+        
+        .tabela1 {
+            font-weight:bold;
+            position: absolute;
+            right:25%;
+            top:40%;
+        }
+        .tabela2 {
+            font-weight:bold;
+            position: absolute;
+            right:25%;
+            top:45%;
+        }
+        .tabela3 {
+            font-weight:bold;
+            position: absolute;
+            right:25%;
+            top:50%;
+        }
+        .tabela4 {
+            font-weight:bold;
+            position: absolute;
+            right:25%;
+            top:55%;
+        }
+        .tabela5 {
+            font-weight:bold;
+            position: absolute;
+            right:25%;
+            top:60%;
+        }
+        .tabela6 {
+            font-weight:bold;
+            position: absolute;
+            right:25%;
+            top:65%;
+        }
+        .tabela7 {
+            font-weight:bold;
+            position: absolute;
+            right:25%;
+            top:70%;
+        }
+        .tabela8 {
+            font-weight:bold;
+            position: absolute;
+            right:25%;
+            top:75%;
+        }
+        .tabela9 {
+            font-weight:bold;
+            position: absolute;
+            right:25%;
+            top:80%;
+        }
+        .tabela10 {
+            font-weight:bold;
+            position: absolute;
+            right:25%;
+            top:85%;
+        }
+        
+        .mensagemErro {
+            font-weight:bold;
+            position: absolute;
+            right: 8%;
+            top: 45%;
+            color:#FF0000;
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+        }
+        .mensagemSucesso {
+            position: absolute;
+            right: 8%;
+            top: 45%;
+            color:#00FF00; 
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+        }
+    </style>
+</head>
+
+<script>
+    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
+    var compare = "<?php echo $_SESSION['usuario']; ?>";
+        
+    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
+</script>
+
+<body class="corpo">
+    <div class="mensagemSucesso"><?php echo $mensagemSucesso;?></div>
+    <div class="mensagemErro"><?php echo $mensagemErro;?></div>
+    <div class="fraseExcluir">Excluir Livros</div>
+    
+    <form method="post" action="ExcluirLivros.php">
+        <input type="hidden" name="usuario" value=<?php echo $usuario; ?>>
+        <input type="submit" value="    Atualizar" class="botaoAtualizar">
+    </form>
+    <form method="post" action="../MeusLivros/Transacao.php">
+        <input type="hidden" name="usuario" value=<?php echo $usuario; ?>>
+        <input type="hidden" name="transacao" value="MeusLivros.html">
+        <input type="submit" value="   Voltar" class="botaoVoltar">
+    </form>
+    <form method="post" action="ConfirmarExclusao.php">
+        <?php 
+        $i=1;
+        if($listaLivros!=null) {
+            while ($row = mysqli_fetch_assoc($listaLivros)): ?>
+    
+            <div class='<?php echo ("tabela{$i}"); ?>'>
+                <?php echo ("<font class='borda'>Titulo: </font>".$row['Titulo']." &nbsp; 
+                             <font class='borda'>Autor: </font>".$row['Autor']." &nbsp; 
+                             <font class='borda'>Editora: </font>".$row['Editora']." &nbsp; 
+                             <font class='borda'>Edicao: </font>".$row['Edicao']." &nbsp; 
+                             <font class='borda'>Genero: </font>".$row['Genero']); 
+                ?>
+                <input type="checkbox" name="IDLivro[]" value=<?php echo $row['ID'];?>>
+            </div>
+        <?php
+            $i=$i+1;
+            endwhile; 
+        }?>
+        <input type="hidden" name="usuario" value=<?php echo $usuario; ?>>
+        <input type="submit" value="     Excluir" class="botaoExcluir">
+    </form>
+</body>

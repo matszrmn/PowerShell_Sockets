@@ -1,0 +1,7 @@
+.corpo{
+    background: url('../Imagens/books.jpg');
+    position: absolute;
+    background-size: 1350px;
+    background-position: 100% 20%;
+    overflow: hidden;
+}

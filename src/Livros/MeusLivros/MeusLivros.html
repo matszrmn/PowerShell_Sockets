@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <!--<link rel="stylesheet" type="text/css" href="MeusLivros.css">-->
+    <style type="text/css">
+        .corpo{
+            background: url('../../Imagens/biblio.jpg');
+            background-position: 52% 0%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        .fraseMeusLivros {
+            font-family: Papyrus, fantasy;
+            position: absolute;
+            right: 46%;
+            top: 8.7%;
+            color:#FFFFFF; 
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size: 150%;
+        }
+        .botaoVoltar {
+            background:url(../../Imagens/voltar.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 92.5%;
+            top: 5%;
+            cursor:pointer;
+        }
+        .botaoNovoLivro {
+            font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size:125%;
+            color:#FFFFCC;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #009999;
+            position: absolute;
+            left: 43.5%;
+            top: 30%;
+            cursor:pointer;
+        }
+        .botaoRecebidosDeVolta {
+            font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size:125%;
+            color:#FFFFCC;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #009999;
+            position: absolute;
+            left: 43.5%;
+            top: 40%;
+            cursor:pointer;
+        }
+        .botaoEmprestar {
+            font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size:125%;
+            color:#FFFFCC;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #009999;
+            position: absolute;
+            left: 43.5%;
+            top: 50%;
+            cursor:pointer;
+        }
+        .botaoEditar {
+            font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size:125%;
+            color:#FFFFCC;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #009999;
+            position: absolute;
+            left: 43.5%;
+            top: 60%;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<script>
+    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
+    var compare = "<?php echo $_SESSION['usuario']; ?>";
+        
+    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
+</script>
+
+<body class="corpo">
+    <div class="fraseMeusLivros">Meus Livros</div>
+    
+    <form method="post" action="../NovoLivro/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>" >
+        <input type="hidden" name="transacao" value="NovoLivro.html">
+        <input type="submit" value="Cadastrar Novo Livro" class="botaoNovoLivro">
+    </form>
+    <form method="post" action="../RecebidosDeVolta/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>" >
+        <input type="hidden" name="transacao" value="ListarPossiveis.php">
+        <input type="submit" value="Livros Recebidos de Volta" class="botaoRecebidosDeVolta">
+    </form>
+    <form method="post" action="../Emprestar/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>" >
+        <input type="hidden" name="transacao" value="ListarPossiveis.php">
+        <input type="submit" value="Emprestar Livros" class="botaoEmprestar">
+    </form>
+    <form method="post" action="../ExcluirLivros/ExcluirLivros.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
+        <input type="hidden" name="transacao" value="../Livros/EditarLivros.html">
+        <input type="submit" value="Excluir Livros" class="botaoEditar">
+    </form>
+    <form method="post" action="../../Usuario/LogadoComSucesso/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>" >
+        <input type="hidden" name="transacao" value="LogadoComSucesso.php">
+        <input type="submit" value="   Voltar" class="botaoVoltar">
+    </form>
+</body>

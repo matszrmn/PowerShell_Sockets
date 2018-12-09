@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .fraseExcluir {
+            font-family: Serif;
+            font-size: 160%;
+            position: absolute;
+            right: 34.7%;
+            top: 26%;
+        }
+        .botaoVoltar {
+            background:url(../../Imagens/voltar.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 92.5%;
+            top: 5%;
+            cursor:pointer;
+        }
+        .botaoNao {
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 52%;
+            top: 40%;
+            cursor:pointer;
+        }
+        .botaoSim {
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 44%;
+            top: 40%;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<script>
+    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
+    var compare = "<?php echo $_SESSION['usuario']; ?>";
+        
+    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
+</script>
+
+<body style="background-color: black; color: white;">
+    <div class="fraseExcluir">Tem certeza que deseja excluir sua conta?</div>
+    
+    <form method="post" action="Transacao.php">
+        <input type="hidden" name="transacao" value="Configuracoes.html">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
+        <input type="submit" value="   Voltar" class="botaoVoltar">
+    </form>
+    <form method="post" action="Transacao.php">
+        <input type="hidden" name="transacao" value="Configuracoes.html">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
+        <input type="submit" value="  Nao  " class="botaoNao">
+    </form>
+    <form method="post" action="Deletar.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario; ?>">
+        <input type="submit" value="  Sim  " class="botaoSim">
+    </form>
+</body>

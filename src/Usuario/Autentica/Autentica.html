@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .corpo{
+            background: url('../../Imagens/biblio.jpg');
+            background-position: 52% 0%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        .label {
+            color:#FFFFFF; 
+            text-shadow:#000000 1px -1px, #000000 -1px 1px, #000000 1px 1px, #000000 -1px -1px;
+            font-size: 120%;
+        }
+        .caixaTexto {
+            background-color:#FFFFFF;
+            border-width: .2em;
+            border-style: solid;
+            border-color: #000000;
+        }
+        .blocoUsuario {
+            position: absolute;
+            right:42%;
+            top:37.3%;
+        }
+        .blocoSenha {
+            position: absolute;
+            right:42%;
+            top:44%;
+        }
+        .fraseCriarConta {
+            position: absolute;
+            right: 3%;
+            top: 0%;
+            color:#FFFFFF; 
+            text-shadow:#000000 1px -1px, #000000 -1px 1px, #000000 1px 1px, #000000 -1px -1px;
+            font-size: 120%;
+        }
+        .fraseBemVindo {
+            font-family: Papyrus, fantasy;
+            position: absolute;
+            right: 44%;
+            top: 8.7%;
+            color:#FFFFFF; 
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size: 150%;
+        }
+        .botaoLogar {
+            background-color:#4169E1;
+            color:#FFFFFF;
+            border-color:#4169E1;
+            position: absolute;
+            font-size:105%;
+            right: 46.7%;
+            top: 52.7%;
+            cursor:pointer
+        }
+        .botaoCriarConta {
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            color:#4D90FE;
+            font-size:100.5%;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #4D90FE;
+            cursor:pointer;
+        }
+        .mensagemErro {
+            position: absolute;
+            right: 42%;
+            top: 35%;
+            color:#FF0000;
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+        }
+        .mensagemSucesso {
+            position: absolute;
+            right: 42%;
+            top: 35%;
+            color:#00FF00; 
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+        }
+    </style>
+</head>
+<body class="corpo">
+    <div class="fraseBemVindo">Biblioteca ES</div>
+    <div class="mensagemErro"><?php echo $mensagemErro; ?></div>
+    <div class="mensagemSucesso"><?php echo $mensagemSucesso; ?></div>
+    
+    <form method="post" action="../../Usuario/Autentica/Autentica.php">
+        <!-- action="Package/teste.html"-->
+        <div class = "blocoUsuario">
+            <p class="label">Usuario ou Email
+                <input type="text" name="usuario" maxlength="30" class="caixaTexto">
+            </p>
+        </div>
+        <div class = "blocoSenha">
+            <p class="label">Senha
+                <input type="password" name="senha" maxlength="30" class="caixaTexto">
+            </p>
+        </div>
+        <input type="submit" value="Logar" class="botaoLogar">
+    </form>
+    <form method="post" action="../../Conta/CriarConta/PassarParametros.php">
+        <p class="fraseCriarConta">
+            Ainda nao possui uma conta? &nbsp;  
+            <input type="submit" value="Criar Conta" class="botaoCriarConta">
+        </p>
+    </form>
+</body>

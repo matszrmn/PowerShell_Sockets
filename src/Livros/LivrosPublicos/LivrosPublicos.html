@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+    <style type="text/css">
+        .corpo{
+            background: url('../../Imagens/biblio.jpg');
+            background-position: 52% 0%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        .fraseLivrosPublicos {
+            font-family: Papyrus, fantasy;
+            position: absolute;
+            right: 45%;
+            top: 8.7%;
+            color:#FFFFFF; 
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size: 150%;
+        }
+        .botaoVoltar {
+            background:url(../../Imagens/voltar.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:130%;
+            position: absolute;
+            right: 92.5%;
+            top: 5%;
+            cursor:pointer;
+        }
+        .botaoPedir {
+            font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size:125%;
+            color:#FFFFCC;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #009999;
+            position: absolute;
+            left: 42%;
+            top: 34%;
+            cursor:pointer;
+        }
+        .botaoLivrosPegos {
+            font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size:125%;
+            color:#FFFFCC;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #009999;
+            position: absolute;
+            left: 42%;
+            top: 45%;
+            cursor:pointer;
+        }
+        .botaoMinhasSolicitacoes {
+            font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size:125%;
+            color:#FFFFCC;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #009999;
+            position: absolute;
+            left: 42%;
+            top: 56%;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<script>
+    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
+    var compare = "<?php echo $_SESSION['usuario']; ?>";
+        
+    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
+</script>
+
+<body class="corpo">
+    <div class="fraseLivrosPublicos">Livros Publicos</div>
+    <form method="post" action="../PedirEmprestado/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" >
+        <input type="hidden" name="transacao" value="ListarPossiveis.php">
+        <input type="submit" value="Pedir Emprestado" class="botaoPedir">
+    </form>
+    <form method="post" action="../LivrosPegos/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" >
+        <input type="hidden" name="transacao" value="ListarPossiveis.php">
+        <input type="submit" value="Devolver Livros" class="botaoLivrosPegos">
+    </form>
+    <form method="post" action="../MinhasSolicitacoes/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" >
+        <input type="hidden" name="transacao" value="ListarPossiveis.php">
+        <input type="submit" value="Minhas Solicitacoes de Emprestimo" class="botaoMinhasSolicitacoes">
+    </form>
+    <form method="post" action="../../Usuario/LogadoComSucesso/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" >
+        <input type="hidden" name="transacao" value="LogadoComSucesso.php">
+        <input type="submit" value="   Voltar" class="botaoVoltar">
+    </form>
+</body>

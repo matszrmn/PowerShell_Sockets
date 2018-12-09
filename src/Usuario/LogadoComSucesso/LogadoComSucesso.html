@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<head>
+    <!--<link rel="stylesheet" type="text/css" 
+        href="../../Usuario/LogadoComSucesso/LogadoComSucesso.css">-->
+    <style type="text/css">
+        .corpo{
+            background: url('../../Imagens/biblio.jpg');
+            background-position: 52% 0%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        .fraseBemVindo {
+            font-family: Papyrus, fantasy;
+            position: absolute;
+            right: 42%;
+            top: 8.7%;
+            color:#FFFFFF; 
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size: 150%;
+        }
+        .botaoConfiguracoes {
+            background:url(../../Imagens/config.png);
+            background-size:17%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 0% 45%;
+            box-shadow: 1px 1px 1px #000000;
+            border-color:#404040;
+            position: absolute;
+            right: 2%;
+            top: 4%;
+            cursor:pointer
+        }
+        .botaoMeusLivros {
+            font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size:125%;
+            color:#FFFFCC;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #009999;
+            position: absolute;
+            left: 43.5%;
+            top: 34%;
+            cursor:pointer
+        }
+        .botaoLivrosPublicos {
+            font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size:125%;
+            color:#FFFFCC;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #009999;
+            position: absolute;
+            left: 43.5%;
+            top: 45%;
+            cursor:pointer
+        }
+        .botaoMinhaReputacao {
+            font-family: 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
+            text-shadow:#000000 2px -2px, #000000 -2px 2px, #000000 2px 0px, #000000 0px -2px;
+            font-size:125%;
+            color:#FFFFCC;
+            background-color:transparent;
+            border-color:transparent;
+            border-bottom:1px solid #009999;
+            position: absolute;
+            left: 43.5%;
+            top: 56%;
+            cursor:pointer
+        }
+        .botaoSair {
+            background:url(../../Imagens/sair.png);
+            background-size:30%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            box-shadow: 1px 1px 1px #000000;
+            border-color:#383838;
+            position: absolute;
+            right: 2%;
+            top: 10%;
+            cursor:pointer
+        }
+    </style>
+</head>
+
+<script>
+    var usuario = "<?php echo $_SESSION['usuario'];   ?>";
+    var compare = "<?php echo $_SESSION['usuario']; ?>";
+        
+    if(usuario!=compare) window.location.replace('../../Usuario/Autentica/Autentica.html'); //Interpretou codigo php como String, logo usuario nao esta logado
+</script>
+
+<script>
+    var div = document.getElementById("user"); //Nao permite que usuario entre nesta etapa se nao estiver logado
+    var user = div.textContent;
+    if(user.trim() == "" || user==null) {
+        window.location.assign("Autentica.html");
+    }
+</script>
+<script type="text/javascript">
+    function NavegacaoInicial(){
+        window.location.replace('../../Usuario/Autentica/Autentica.html');
+        return false;
+    }
+</script>
+
+<body class="corpo">
+    <div class="fraseBemVindo">Seja Bem-Vindo(a), <?php echo $nome ?>!</div>
+    
+    <form method="post" action="../../Livros/LivrosPublicos/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" >
+        <input type="hidden" name="transacao" value="LivrosPublicos.html">
+        <input type="submit" value="Livros Publicos" class="botaoLivrosPublicos">
+    </form>
+    <form method="post" action="../../Livros/MeusLivros/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" >
+        <input type="hidden" name="transacao" value="MeusLivros.html">
+        <input type="submit" value="Meus Livros" class="botaoMeusLivros">
+    </form>
+    <form method="post" action="../../Usuario/MinhaReputacao/MinhaReputacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" >
+        <input type="hidden" name="transacao" value="../Conta/MinhaReputacao.html">
+        <input type="submit" value="Minha Reputacao" class="botaoMinhaReputacao">
+    </form>
+    <form method="post" action="../../Conta/Configuracoes/Transacao.php">
+        <input type="hidden" name="usuario" value="<?php echo $usuario ?>" >
+        <input type="hidden" name="transacao" value="Configuracoes.html">
+        <input type="submit" value="    Configuracoes" class="botaoConfiguracoes">
+    </form>
+    <button onclick="NavegacaoInicial()" class="botaoSair">&nbsp;&nbsp;&nbsp;Sair</button>
+</body>
