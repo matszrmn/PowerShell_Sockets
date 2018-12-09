@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        .corpo{
+            background: url('../Imagens/uni.jpg');
+            background-size:100%;
+            background-position: 52% 0%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        .borda {
+            font-weight:bold;
+            color:black;
+            text-shadow:none;
+        }
+        .label {
+            color:#FFFFFF; 
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+            font-weight:bold;
+            font-size: 120%;
+        }
+        .fraseTabelas {
+            position: absolute;
+            left: 3%;
+            top: 10%;
+            color:#000000; 
+            font-size: 150%;
+            font-weight:bold;
+            text-shadow:#FFFFFF 1px -1px, #000000 -1px 1px, #000000 1px -1px, #000000 1px -1px;
+        }
+        .fraseBemVindo {
+            font-family: Papyrus, fantasy;
+            position: absolute;
+            right: 40%;
+            top: 6%;
+            color:#FFFFFF; 
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+            font-weight:bold;
+            font-size: 180%;
+        }
+        .caixaTexto {
+            background-color:#FFFFFF;
+            border-width: .1em;
+            border-style: solid;
+            border-color: #000000;
+        }
+        
+        .blocoCodigo {
+            position: absolute;
+            right:42%;
+            top:22%;
+        }
+        .blocoNome {
+            position: absolute;
+            right:42%;
+            top:27%;
+        }
+        .blocoDataInicio {
+            position: absolute;
+            right:42%;
+            top:32%;
+        }
+        .blocoHoraInicio {
+            position: absolute;
+            right:42%;
+            top:37%;
+        }
+        .blocoHoraFim {
+            position: absolute;
+            right:42%;
+            top:42%;
+        }
+        .blocoIniciativa {
+            position: absolute;
+            right:42%;
+            top:47%;
+        }
+        .blocoSala {
+            position: absolute;
+            right:42%;
+            top:52%;
+        }
+        .blocoEdificio {
+            position: absolute;
+            right:42%;
+            top:57%;
+        }
+        .blocoProf {
+            position: absolute;
+            right:42%;
+            top:62%;
+        }
+        .blocoDisc {
+            position: absolute;
+            right:42%;
+            top:67%;
+        }
+        .blocoUnidade {
+            position: absolute;
+            right:42%;
+            top:72%;
+        }
+        .blocoVerba {
+            position: absolute;
+            right:42%;
+            top:77%;
+        }
+        
+        
+        .botaoDeletar {
+            background-color:#4169E1;
+            color:#FFFFFF;
+            border-color:#4169E1;
+            position: absolute;
+            font-size:105%;
+            right: 52.5%;
+            top: 88%;
+            cursor:pointer
+        }
+        .botaoAtualizar {
+            background-color:#4169E1;
+            color:#FFFFFF;
+            border-color:#4169E1;
+            position: absolute;
+            font-size:105%;
+            right: 45.5%;
+            top: 88%;
+            cursor:pointer
+        }
+        .botaoInserir {
+            background-color:#4169E1;
+            color:#FFFFFF;
+            border-color:#4169E1;
+            position: absolute;
+            font-size:105%;
+            right: 40%;
+            top: 88%;
+            cursor:pointer
+        }
+        
+        
+        .botaoUsuario {
+            background-color:#D0D0D0;
+            color:#000000;
+            border-color:#696969;
+            position: absolute;
+            font-size:105%;
+            left: 3%;
+            top: 18%;
+            cursor:pointer
+        }
+        .botaoExtensao {
+            background-color:#D0D0D0;
+            color:#000000;
+            border-color:#696969;
+            position: absolute;
+            font-size:105%;
+            left:10%;
+            top: 18%;
+            cursor:pointer
+        }
+        .botaoAprendizado {
+            background-color:#D0D0D0;
+            color:#000000;
+            border-color:#696969;
+            position: absolute;
+            font-size:105%;
+            left:17.9%;
+            top: 18%;
+            cursor:pointer
+        }
+        
+        
+        .botaoVisualizar {
+            background:url(../Imagens/eye.png);
+            background-size:20%;
+            background-repeat:no-repeat;
+            background-color:#D0D0D0;
+            background-position: 2% 45%;
+            border-color:#696969;
+            font-size:125%;
+            position: absolute;
+            right: 15%;
+            top: 18%;
+            cursor:pointer;
+        }
+        
+        .detalhesErro {
+            position: absolute;
+            right: 15%;
+            top: 32%;
+            color:#000000; 
+            font-size: 100%;
+            font-weight:bold;
+            text-shadow:#FFFFFF 1px -1px, #000000 -1px 1px, #000000 1px -1px, #000000 1px -1px;
+        }
+        .descricaoErro {
+            color:#FFFFFF;
+            text-shadow:#000000 1px -1px, #000000 -1px 1px, #000000 1px 1px, #000000 -1px -1px;
+            font-size: 90%;
+            font-weight:bold;
+        }
+        
+        
+        .mensagemErro {
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+            position: absolute;
+            right: 42%;
+            top: 21%;
+            font-size:110%;
+            font-weight:bold;
+            color:#FF0000;
+        }
+        .mensagemSucesso {
+            text-shadow: 1px 1px 0 #000,
+            -1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px 0 #000,
+            0px 1px 0 #000,
+            0px -1px 0 #000,
+            -1px 0px 0 #000,
+            1px 0px 0 #000,
+            2px 2px 0 #000,
+            -2px 2px 0 #000,
+            2px -2px 0 #000,
+            -2px -2px 0 #000,
+            0px 2px 0 #000,
+            0px -2px 0 #000,
+            -2px 0px 0 #000,
+            2px 0px 0 #000,
+            1px 2px 0 #000,
+            -1px 2px 0 #000,
+            1px -2px 0 #000,
+            -1px -2px 0 #000,
+            2px 1px 0 #000,
+            -2px 1px 0 #000,
+            2px -1px 0 #000,
+            -2px -1px 0 #000;
+            position: absolute;
+            right: 42%;
+            top: 21%;
+            font-size:110%;
+            font-weight:bold;
+            color:#4169E1;
+        }
+    </style>
+</head>
+<body class="corpo">
+    <div class="fraseBemVindo">Universidade LBD</div>
+    <div class="fraseTabelas">Tabelas:</div>
+    <div class="mensagemErro"><?php echo $mensagemErro; ?></div>
+    <div class="mensagemSucesso"><?php echo $mensagemSucesso; ?></div>
+    <?php if($descricaoErro!=null && $descricaoErro!='') {
+        echo $descricaoErro;
+    }?>
+    
+    <form method="post" action="index.html">
+        <input type="submit" value="Usuario" class="botaoUsuario">
+    </form>
+    <form method="post" action="AprendizadoIni.php">
+        <input type="submit" value="Aprendizado Optativo" class="botaoAprendizado">
+    </form>
+    <form method="post" action="Extensao.html">
+        <input type="submit" value="Extensao" class="botaoExtensao">
+    </form>
+    
+    <form method="post" action="Visualizar.php">
+        <input type="hidden" name="paginaAnterior" value="Extensao">
+        <input type="submit" value="     Visualizar BD" class="botaoVisualizar">
+    </form>
+    
+    
+    <form method="post" action="Extensao.php">
+        <div class = "blocoCodigo">
+            <p class="label">Codigo
+                <input type="number" required="required" name="Codigo" maxlength="10" class="caixaTexto" title="Utilize apenas numeros">
+            </p>
+        </div>
+        <div class = "blocoNome">
+            <p class="label">Nome
+                <input type="text" name="Nome" maxlength="20" class="caixaTexto">
+            </p>
+        </div>
+        <div class = "blocoDataInicio">
+            <p class="label">Data Inicio
+                <input type="date" name="DataInicio" class="caixaTexto">
+            </p>
+        </div>
+        <div class = "blocoHoraInicio">
+            <p class="label">Hora Inicio
+                <input type="number" name="HoraInicio" maxlength="2" class="caixaTexto" max="22" min="8" title="Utilize apenas numeros entre 8 e 22">
+            </p>
+        </div>
+        <div class = "blocoHoraFim">
+            <p class="label">Hora Termino
+                <input type="number" name="HoraFim" maxlength="2" class="caixaTexto" max="23" min="9" title="Utilize apenas numeros entre 9 e 23">
+            </p>
+        </div>
+        <div class = "blocoIniciativa">
+            <p class="label">Iniciativa Privada
+            <select name="Iniciativa">
+                <option value="true">Sim</option>
+                <option value="false">Nao</option>
+            </select>
+            </p>
+        </div>
+        <div class = "blocoSala">
+            <p class="label">Sala Codigo
+                <input type="number" name="Sala" maxlength="10" class="caixaTexto" title="Utilize apenas numeros">
+            </p>
+        </div>
+        <div class = "blocoEdificio">
+            <p class="label">Edificio Codigo
+                <input type="text" name="Edificio" maxlength="10" class="caixaTexto">
+            </p>
+        </div>
+        
+        <div class = "blocoProf">
+            <p class="label">Professor RNA
+                <input type="number" name="Prof" maxlength="10" class="caixaTexto" title="Utilize apenas numeros">
+            </p>
+        </div>
+        <div class = "blocoDisc">
+            <p class="label">Disciplina Codigo
+                <input type="text" name="Disc" maxlength="10" class="caixaTexto">
+            </p>
+        </div>
+        <div class = "blocoUnidade">
+            <p class="label">Unidade Codigo
+                <input type="number" name="Unidade" maxlength="10" class="caixaTexto" title="Utilize apenas numeros">
+            </p>
+        </div>
+        <div class = "blocoVerba">
+            <p class="label">Verba Mensal
+                <input type="text" name="Verba" maxlength="10" class="caixaTexto">
+            </p>
+        </div>
+        
+        <input type="submit" name="action" value="Deletar" class="botaoDeletar">
+        <input type="submit" name="action" value="Atualizar" class="botaoAtualizar">
+        <input type="submit" name="action" value="Inserir" class="botaoInserir">
+    </form>
+</body>

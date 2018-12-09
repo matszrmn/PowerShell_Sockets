@@ -1,5 +1,6 @@
-# Projeto_Krypto
-Sistema de criptografia para arquivos utilizando o algoritmo RSA, proveniente da biblioteca OpenSSL do PHP.
+# Projeto_LBD
+Este trabalho visa o cumprimento da disciplina "__Laboratório de Bancos de Dados__". Trata-se de um __sistema de banco de dados__ utilizando __interface gráfica__.
 <br />
 <br />
-- O site pode ser conferido no link a seguir: **http://projectkrypto.co.nf/**
+- O site pode ser conferido no link a seguir: **http://projectlbd.co.nf/**
+- O vídeo da descrição do sistema pode ser conferido no link a seguir: **https://www.youtube.com/watch?v=qeM5gvrH-ag**
