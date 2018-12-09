@@ -8,7 +8,7 @@ O intuito da criação deste programa é promover uma plataforma parecida com o 
 ## Comandos (Cliente)
 
 - __testnotepad__
-  <p> Abre 10 páginas do notepad com a frase "Testando notepad !!!" </p>
+  <p> Abre 10 páginas do notepad com a frase "Testando notepad" </p>
 
 - __setvolume__
   <p> Modifica o volume do servidor, exemplo: &nbsp; <b>setvolume 20</b> &nbsp; deixa o volume do servidor em 20 </p>
